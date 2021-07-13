@@ -8,9 +8,9 @@
     root.AOS = factory();
   }
 })(this, function () {
-  //로컬 선언
+  //로컬(지역함수) 선언
   const AOScallback = (entries) => {
-    //콜백함수 정의
+    //옵저버 콜백함수 정의
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         console.log("보일때", entry.target.dataset.animate);
@@ -26,7 +26,7 @@
     });
   };
   const checkVisible = (elm) => {
-    //클래식 함수 정의
+    //클래식(스크롤이벤 감지) 함수 정의
     const viewportHeight = window.innerHeight,
       scrollY = window.scrollY,
       y = elm.offsetTop,
